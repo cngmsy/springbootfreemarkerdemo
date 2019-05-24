@@ -15,8 +15,6 @@
     <#if user ??>
         <script type="text/javascript">
             $(document).ready(function () {
-                alert("不为空")
-
                 var error = '${error!""}';
                 if (error != '')
                     alert(error);
@@ -34,10 +32,7 @@
     <#else >
            <script >
                $(document).ready(function () {
-                   alert("为空")
-
                    $("#span4").hide()
-
                });
            </script>
     </#if>
@@ -53,8 +48,12 @@
             <#--todo 登陆的时候跳转到登陆页面    注册的时候跳转注册页面  推出的时候退出界面  购物车展示  商品详情
             -->
 			<span id="span3"><a href="/index/login">登录</a> | <a href="/index/reg">注册</a></span>
-			<span id="span4">欢迎登录！${username!""}|<a href="/user/exit">退出</a></span>
-			|   <a href="/cart/list">我的购物车</a>
+			<span id="span4">欢迎登录！
+            <#if  user ??>
+                ${user.userName!""}
+            </#if>
+            |<a href="/user/exit">退出</a></span>
+			<a href="/cart/list">我的购物车</a>
 		</span>
     </div>
 

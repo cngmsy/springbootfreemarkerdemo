@@ -19,7 +19,12 @@ public class UserController {
     UserService userService;
 
     @RequestMapping("/exit")
-    public String userExit(){
+    public String userExit(HttpSession session){
+
+        session.removeAttribute("user");
+        session.removeAttribute("error");
+        session.removeAttribute("success");
+
         return "index";
     }
 
@@ -30,9 +35,13 @@ public class UserController {
     public String userLogin(@ModelAttribute() User user, HttpSession session){
         User user1 = userService.findUser(user);
         if ( user1 !=null) {
-
+            session.setAttribute("user",user1);
+            session.setAttribute("error","");
+            session.setAttribute("success","登陆成功");
            return "index" ;
         }else{
+            session.setAttribute("error","登陆失败");
+            session.setAttribute("success","");
             return "login";
         }
     }
@@ -45,6 +54,8 @@ public class UserController {
 
         System.out.println(user.getCellphone());
         if ( suc > 0) {
+
+
             return "login" ;
         }else{
             return "reg";

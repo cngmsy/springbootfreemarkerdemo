@@ -9,6 +9,11 @@
     <script type="text/javascript" src="/js/login.js"></script>
 </head>
 <body>
+<#if info ??>
+<script>
+    alert("${info}")
+</script>
+</#if>
 <div id="container">
 
 
