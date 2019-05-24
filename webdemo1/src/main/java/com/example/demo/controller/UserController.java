@@ -37,6 +37,7 @@ public class UserController {
         if ( user1 !=null) {
             session.setAttribute("user",user1);
             session.setAttribute("error","");
+
             session.setAttribute("success","登陆成功");
            return "index" ;
         }else{

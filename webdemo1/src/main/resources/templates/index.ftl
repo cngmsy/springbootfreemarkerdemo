@@ -21,7 +21,15 @@
 </head>
 <body>
  <#include "header.ftl">
+
+ <#if errorinfo ??>
+     <script>
+         alert("${errorinfo}")
+     </script>
+ </#if>
 <div id="containter">
+
+
 
     <div id="left">
         <div id="left1">

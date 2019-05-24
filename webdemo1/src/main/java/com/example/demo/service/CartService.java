@@ -9,4 +9,7 @@ public interface CartService {
 
 
     List<Cart> findCartsByUserName(User user);
+
+
+    int insertCart(Cart cart);
 }

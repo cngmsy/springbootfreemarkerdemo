@@ -27,4 +27,10 @@ public class CartServiceImpl implements CartService {
         List<Cart> carts = cartMapper.selectByExample(cartExample);
         return carts;
     }
+
+    @Override
+    public int insertCart(Cart cart) {
+        int insert = cartMapper.insert(cart);
+        return insert;
+    }
 }

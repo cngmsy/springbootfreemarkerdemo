@@ -1,9 +1,11 @@
 package com.example.demo;
 
 import com.example.demo.entity.Cart;
+import com.example.demo.entity.Goods;
 import com.example.demo.entity.User;
 import com.example.demo.mapper.CartMapper;
 import com.example.demo.service.CartService;
+import com.example.demo.service.GoodsService;
 import com.example.demo.service.UserService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -21,6 +23,8 @@ public class DemoApplicationTests {
     UserService userService;
     @Autowired
     CartService cartService;
+    @Autowired
+    GoodsService goodsService;
 
 
     @Test
@@ -32,7 +36,7 @@ public class DemoApplicationTests {
         }
         System.out.println(all);
     }
-    @Test
+       @Test
     public void contextLoads1() {
 
         User user=new User();
@@ -43,6 +47,19 @@ public class DemoApplicationTests {
             System.out.println(cart.toString());
         }
         System.out.println(all);
+    }
+
+
+
+    @Test
+    public void contextLoads2() {
+
+        List<Goods> goods = goodsService.findGoodsById(10103);
+
+        for (Goods good:goods) {
+            System.out.println(good.toString());
+        }
+
     }
 
 }
