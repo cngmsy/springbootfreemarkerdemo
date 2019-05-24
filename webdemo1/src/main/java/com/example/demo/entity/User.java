@@ -128,4 +128,15 @@ public class User {
     public void setCellphone(String cellphone) {
         this.cellphone = cellphone == null ? null : cellphone.trim();
     }
+
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", userName='" + userName + '\'' +
+                ", passWord='" + passWord + '\'' +
+                ", cellphone='" + cellphone + '\'' +
+                '}';
+    }
 }

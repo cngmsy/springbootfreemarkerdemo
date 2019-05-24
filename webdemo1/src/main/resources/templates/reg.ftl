@@ -105,7 +105,7 @@
                 href="login" style="margin-left: 20px;">请登录</a></span>
     </div>
     <div id="div2">
-        <form action="/userInfo/reg" method="post">
+        <form action="/user/reg" method="post">
             <table width="511px" cellspacing="4px" cellpadding="1px"
                    style="margin-left: 260px;">
                 <tr>
@@ -113,7 +113,7 @@
                         style="font-size: 13px; font-weight: bold; color: white">请输入用户名</td>
                     <td colspan="2"><input type="text"
                                            style="display: block; width: 250px; height: 35px; font-size: 13px; color: #999"
-                                           placeholder="限制4~15位" id="user" name="user" /></td>
+                                           placeholder="限制4~15位" id="user" name="userName" /></td>
                     <td width="112" id="v1">&nbsp;</td>
                 </tr>
                 <tr>
@@ -122,7 +122,7 @@
                     <td colspan="2"><input type="password"
                                            placeholder="限制数字、字母、下划线，6-20长度！"
                                            style="display: block; width: 250px; height: 35px; font-size: 13px; color: #999;"
-                                           id="pass" name="psw" /></td>
+                                           id="pass" name="passWord" /></td>
                     <td id="v2">&nbsp;</td>
                 </tr>
                 <tr>
@@ -138,7 +138,7 @@
                         style="font-size: 13px; font-weight: bold; color: white">手机号码</td>
                     <td colspan="2"><input type="text" placeholder="仅限大陆手机用户"
                                            style="display: block; width: 250px; height: 35px" id="phone"
-                                           name="phone" /></td>
+                                           name="cellphone" /></td>
                     <td id="v4">&nbsp;</td>
                 </tr>
 
