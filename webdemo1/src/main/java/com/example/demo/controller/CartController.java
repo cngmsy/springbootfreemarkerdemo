@@ -10,6 +10,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpSession;
+import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.util.List;
 
 @Controller
@@ -29,7 +31,10 @@ public class CartController {
         }else if (user.getUserName() != null) {
             List<Cart> carts = cartService.findCartsByUserName(user);
 
-            model.addAttribute("list",carts);
+            model.addAttribute("list2",carts);
+
+
+            model.addAttribute("total",getTotal(carts));
             session.setAttribute("success","当前购物车商品有"+carts.size());
             return "cart";
         }else{
@@ -38,5 +43,16 @@ public class CartController {
         }
 
 
+    }
+
+    private float getTotal(List<Cart> carts) {
+        float total=0;
+        for (Cart cart:carts) {
+           float price= cart.getPrice().floatValue();
+
+            float to = cart.getNum() * price;
+            total+=to;
+        }
+        return total;
     }
 }
